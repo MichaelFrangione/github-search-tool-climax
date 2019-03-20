@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import GraphQLActions from '../graphQl/GraphQLActions';
 import { onSearch, clearSearchResults, updateSearchTerm, onSearchError, updateLoadingState } from "../actions/index";
