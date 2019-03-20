@@ -1,11 +1,11 @@
 
-GitHub Search tool, is a search tool that leverages the [https://developer.github.com/v4/](GitHub GraphQL API v4) to query and display User and Repository information based on a search query.
+GitHub Search tool, is a search tool that leverages the [GitHub GraphQL API v4](https://developer.github.com/v4/) to query and display User and Repository information based on a search query.
 
 Enjoy!
 
 ## Project Setup
 
-This app makes use of the GitHub GraphQL API which requires an OAuth token with the right scopes. [https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql](See here for more details).
+This app makes use of the GitHub GraphQL API which requires an OAuth token with the right scopes. [See here for more details](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql).
 
 Once you created the token, open .env and replace YOUR_PERSONAL_ACCESS_TOKEN_HERE with the new generated token.
 
