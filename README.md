@@ -3,6 +3,12 @@ GitHub Search tool, is a search tool that leverages the [https://developer.githu
 
 Enjoy!
 
+## Project Setup
+
+This app makes use of the GitHub GraphQL API which requires an OAuth token with the right scopes. [https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql](See here for more details).
+
+Once you created the token, open .env and replace YOUR_PERSONAL_ACCESS_TOKEN_HERE with the new generated token.
+
 ## Available Scripts
 
 In the project directory, you can run:
