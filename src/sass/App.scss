@@ -1,0 +1,98 @@
+@import 'variables';
+@import 'spinner';
+@import 'searchbox';
+@import 'userContainer';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #ededed;
+  color: $font-color;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+  display: inline-block;
+
+  &:hover,
+  &:active {
+    color: $blue2;
+  }
+}
+
+header {
+  margin-top: 0px;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  background: $navbar;
+
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .app-logo {
+      height: 120px;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+.back-to-top-container {
+  position: fixed;
+  overflow: hidden;
+  bottom: -120px;
+  right: -150px;
+  transition: all 0.2s ease-in-out;
+  animation: arm-jiggle 2s infinite alternate;
+
+  h3 {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  &.show {
+    right: -5px;
+    bottom: -5px;
+  }
+}
+
+.ellipsis {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes arm-jiggle {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}

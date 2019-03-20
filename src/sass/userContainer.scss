@@ -1,0 +1,172 @@
+.user-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results-container {
+    max-width: 1200px;
+    padding-left: 10px;
+    margin: 0 auto;
+
+    h4 {
+        font-size: 24px;
+    }
+}
+
+.organization-card,
+.user-card {
+    position: relative;
+    flex: 0 1 100%;
+    margin: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    animation: fade-in 1s forwards;
+    overflow: hidden;
+    height: 200px;
+    max-height: 200px;
+    transition: max-height 0.3s ease-in-out;
+
+    .visible-flex-container {
+        display: flex;
+        flex-direction: row;
+
+        .user-avatar {
+            flex: 0 0 auto;
+            height: 200px;
+        }
+
+        .metadata {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+
+            .location {
+                margin: 10px 0px;
+                float: right;
+            }
+
+            hr {
+                border-color: $hr-color;
+            }
+
+            h3,
+            p {
+                margin: 10px 0;
+            }
+
+        }
+
+        .expand-icon {
+            cursor: pointer;
+            position: absolute;
+            font-size: 32px;
+            top: 150px;
+            right: 15px;
+            border: 1px solid transparent;
+            background: transparent;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+            &:hover {
+                background: $blue2;
+                color: #fff;
+            }
+
+            &.expanded {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &.expanded {
+        height: auto;
+        max-height: 10000px;
+    }
+
+    .repos-container {
+        flex: none;
+        display: grid;
+        /* 1 */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        /* 2 */
+        grid-gap: 10px;
+        /* 3 */
+        padding: 10px;
+
+        .repo-box {
+            position: relative;
+            padding: 10px;
+            flex: 1 0 350px;
+            height: 100px;
+            // margin: 5px;
+            border-radius: 4px;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+            .repo-name {
+                margin-top: 20px;
+            }
+
+            .languages-container {
+                text-align: right;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+
+                .language-display {
+                    display: inline;
+                    margin-right: 5px;
+                    font-size: 11px;
+                    font-weight: bold;
+                }
+            }
+
+            .description {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+
+            .stargazers {
+                position: absolute;
+                top: 30px;
+                right: 10px;
+                display: flex;
+                justify-content: center;
+
+                i {
+                    margin-top: -1px;
+                    color: gold;
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .organization-card,
+    .user-card {
+        .visible-flex-container {
+            .metadata {
+                font-size: 10px;
+
+                .location {
+                    margin-top: -5px;
+                    float: none;
+                }
+            }
+            .expand-icon {
+                top: 160px;
+                font-size: 21px;
+            }
+        }
+    }
+
+    .back-to-top-container{ 
+        display: none;
+    }
+}
